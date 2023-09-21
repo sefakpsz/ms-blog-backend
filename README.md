@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 # ms-blog-backend
-=======
-# Nitro Minimal Starter
 
 Look at the [Nitro documentation](https://nitro.unjs.io/) to learn more.
 
@@ -43,4 +40,3 @@ npm run preview
 ```
 
 Check out the [deployment documentation](https://nitro.unjs.io/deploy) for more information.
->>>>>>> 6489dbf (init)
