@@ -4,7 +4,10 @@
     "prepare": "nitropack prepare",
     "dev": "nitropack dev",
     "build": "nitropack build",
-    "preview": "node .output/server/index.mjs"
+    "preview": "node .output/server/index.mjs",
+    "prisma:studio": "prisma studio",
+    "prisma:migrate": "bunx prisma migrate",
+    "prisma:migrate-dev": "bunx prisma migrate dev"
   },
   "dependencies": {
     "@prisma/client": "^5.3.1",
