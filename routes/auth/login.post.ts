@@ -1,20 +1,13 @@
-import { z, zh } from "h3-zod";
+import { useValidatedBody } from "h3-zod";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import { LoginValidation } from "../validation/auth";
-import { PrismaClient, Prisma } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+import { LoginValidation } from "../../validation/auth";
 
 const prisma = new PrismaClient();
 
 export default defineEventHandler(async (event) => {
-  const { email, password } = await readBody(event);
-  const bodyValidation = await zh.useSafeValidatedBody(event, LoginValidation);
-
-  if (!bodyValidation.success)
-    throw createError({
-      statusCode: 400,
-      message: "Invalid request body",
-    });
+  const { email, password } = await useValidatedBody(event, LoginValidation);
 
   const user = await prisma.user.findUnique({
     where: {
@@ -34,6 +27,6 @@ export default defineEventHandler(async (event) => {
   const token = jwt.sign(user, "msblog");
 
   return {
-    token,
+    token
   };
 });
