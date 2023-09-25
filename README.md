@@ -2,6 +2,18 @@
 
 Look at the [Nitro documentation](https://nitro.unjs.io/) to learn more.
 
+## Endpoints
+
+```bash
+# Auth
+POST /auth/login
+# Blog
+GET /blog/posts
+POST /blog/post/create
+GET /blog/post/:id
+DELETE /blog/post/:id
+```
+
 ## Setup
 
 Make sure to install the dependencies:
