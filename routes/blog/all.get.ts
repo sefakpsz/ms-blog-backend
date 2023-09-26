@@ -1,8 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
-
 export default defineEventHandler(async (event) => {
+  const prisma = new PrismaClient();
   const blogs = await prisma.post.findMany();
 
   return {

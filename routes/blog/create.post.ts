@@ -2,9 +2,8 @@ import { PrismaClient } from "@prisma/client";
 import { useValidatedBody, zh } from "h3-zod";
 import { BodyValidaton } from "../../validation/blog";
 
-const prisma = new PrismaClient();
-
 export default defineEventHandler(async (event) => {
+  const prisma = new PrismaClient();
   const { thumbnail, title, content } = await useValidatedBody(
     event,
     BodyValidaton

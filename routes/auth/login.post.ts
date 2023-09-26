@@ -4,9 +4,9 @@ import bcrypt from "bcryptjs";
 import { PrismaClient } from "@prisma/client";
 import { LoginValidation } from "../../validation/auth";
 
-const prisma = new PrismaClient();
-
 export default defineEventHandler(async (event) => {
+  const prisma = new PrismaClient();
+
   const { email, password } = await useValidatedBody(event, LoginValidation);
 
   const user = await prisma.user.findUnique({
@@ -27,6 +27,6 @@ export default defineEventHandler(async (event) => {
   const token = jwt.sign(user, "msblog");
 
   return {
-    token
+    token,
   };
 });
