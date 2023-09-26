@@ -11,7 +11,7 @@ export default eventHandler(() => {
   <body class="bg-gray-100 flex items-center justify-center h-screen">
       <div class="text-center">
           <h1 class="text-4xl font-bold text-blue-700 mb-4">MS Blog Backend</h1>
-          <p class="text-lg text-gray-700">Deployed with <b>Vercel</b> & Provided on <b>Render.com</b> </p>
+          <p class="text-lg text-gray-700">Deployed with <b>Vercel</b> & Provided on <b>Supabase</b> </p>
       </div>
   </body>
   </html>
