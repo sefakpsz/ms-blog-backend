@@ -1,4 +1,6 @@
-import { PrismaClient } from "@prisma/client";
+import Prisma from '@prisma/client';
+
+const { PrismaClient } = Prisma;
 
 export default defineEventHandler(async (event) => {
   const prisma = new PrismaClient();

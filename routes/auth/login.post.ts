@@ -1,8 +1,10 @@
 import { useValidatedBody } from "h3-zod";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import { PrismaClient } from "@prisma/client";
+import Prisma from '@prisma/client';
 import { LoginValidation } from "../../validation/auth";
+
+const { PrismaClient } = Prisma;
 
 export default defineEventHandler(async (event) => {
   const prisma = new PrismaClient();
